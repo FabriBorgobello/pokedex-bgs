@@ -1,0 +1,11 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3% 10%;
+
+  .SearchBar {
+    margin-bottom: 2rem;
+  }
+}

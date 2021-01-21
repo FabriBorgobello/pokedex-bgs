@@ -34,19 +34,32 @@
     font-size: 0.8rem;
     text-transform: capitalize;
   }
-  .PokemonImage {
-    height: 110%;
-    position: absolute;
-    top: 0;
-    left: 35%;
-    z-index: 1;
+  .Content {
+    height: 110px;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .Id {
+      font-size: 1rem;
+      padding: 0.5rem;
+      align-self: flex-end;
+      color: black;
+      font-weight: 600;
+      background-color: rgb(255, 212, 212);
+      border-radius: 0.25rem;
+      position: relative;
+      top: 12px;
+      left: -10px;
+    }
+
+    // .PokemonImage {
+    //   height: 110%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 35%;
+    //   z-index: 1;
+    // }
   }
-}
-.BackgroundImage {
-  height: 100%;
-  position: absolute;
-  top: 30%;
-  left: -8%;
-  opacity: 0.1;
-  z-index: 0.8;
 }

@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  background-color: $color-primary;
+  color: white;
+  .Creator {
+    margin-bottom: 0.6rem;
+  }
+  .Social {
+    .SocialLink {
+      color: white;
+      i {
+        font-size: 1.5rem;
+        margin: 0 0.3rem;
+      }
+    }
+  }
+}

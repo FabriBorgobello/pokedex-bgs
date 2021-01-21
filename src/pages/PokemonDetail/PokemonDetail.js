@@ -13,10 +13,9 @@ const PokemonDetail = () => {
   }, [id, setPoke]);
 
   return (
-    <div>
-      <h1>Pokemon Detail</h1>
+    <>
       <DetailCard />
-    </div>
+    </>
   );
 };
 

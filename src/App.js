@@ -15,10 +15,12 @@ function App() {
       <PokeListProvider>
         <PokeProvider>
           <NavBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/pokemon/:id" component={PokemonDetail} />
-          </Switch>
+          <div className="Content" style={{ minHeight: "calc(100vh - 120px)" }}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/pokemon/:id" component={PokemonDetail} />
+            </Switch>
+          </div>
           <Footer />
         </PokeProvider>
       </PokeListProvider>

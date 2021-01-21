@@ -1,35 +1,19 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import PokemonList from "../../components/PokemonList/PokemonList";
 import { fetchPokemons } from "../../api/pokemonAPI";
-import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { PokeList } from "../../context/PokeList";
 
 const Home = () => {
-  const [pokemons, setPokemons] = React.useState([]);
-  React.useEffect(() => {
-    fetchPokemons().then(result => setPokemons(result));
-  }, []);
+  const [pokeList, setPokeList] = React.useContext(PokeList);
 
-  //  Get ID from URL to request imgs.
-  const getIdFromUrl = url => {
-    const slicedUrl = url.slice(0, -1);
-    const id = slicedUrl.substring(slicedUrl.lastIndexOf("/") + 1);
-    return id;
-  };
+  React.useEffect(() => {
+    fetchPokemons().then(result => setPokeList(result));
+  }, [setPokeList]);
 
   return (
     <div>
       <h1>Home</h1>
-      <div className="container">
-        {pokemons.results &&
-          pokemons.results.map(pokemon => {
-            const id = getIdFromUrl(pokemon.url);
-            return (
-              <Link key={id} to={`pokemon/${id}`}>
-                <PokemonCard name={pokemon.name} id={id} />
-              </Link>
-            );
-          })}
-      </div>
+      <PokemonList />
     </div>
   );
 };

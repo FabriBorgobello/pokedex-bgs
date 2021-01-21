@@ -1,18 +1,28 @@
 import "./styles/App.scss";
 import * as React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import { PokemonContextProvider } from "./context/PokemonContext";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { PokeListProvider } from "./context/PokeList";
+import { PokeProvider } from "./context/Poke";
 import Home from "./pages/Home/Home";
 import PokemonDetail from "./pages/PokemonDetail/PokemonDetail";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+
 // MemoryRouter?
 function App() {
   return (
-    <PokemonContextProvider>
-      <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/pokemon/:id" component={PokemonDetail} />
-      </BrowserRouter>
-    </PokemonContextProvider>
+    <BrowserRouter>
+      <PokeListProvider>
+        <PokeProvider>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/pokemon/:id" component={PokemonDetail} />
+          </Switch>
+          <Footer />
+        </PokeProvider>
+      </PokeListProvider>
+    </BrowserRouter>
   );
 }
 

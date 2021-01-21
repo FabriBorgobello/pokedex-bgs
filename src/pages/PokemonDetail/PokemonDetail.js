@@ -1,18 +1,21 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { fetchPokemonById } from "../../api/pokemonAPI";
+import DetailCard from "../../components/DetailCard/DetailCard";
+import { Poke } from "../../context/Poke";
 
 const PokemonDetail = () => {
-  const [pokemon, setPokemon] = React.useState([]);
   const { id } = useParams();
+  const [poke, setPoke] = React.useContext(Poke);
 
   React.useEffect(() => {
-    fetchPokemonById(id).then(result => setPokemon(result));
-  }, [id]);
+    fetchPokemonById(id).then(result => setPoke(result));
+  }, [id, setPoke]);
+
   return (
     <div>
       <h1>Pokemon Detail</h1>
-      <h2>{pokemon.name.toUpperCase()}</h2>
+      <DetailCard />
     </div>
   );
 };

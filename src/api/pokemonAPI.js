@@ -1,6 +1,6 @@
-export const fetchPokemons = async (limit = 20, offset = 0) => {
+export const fetchAllPokemons = async () => {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}/`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=493&offset=0`);
     let list = await response.json();
 
     // Incluir ID en cada objeto para poder mostrar la imagen correspondiente.
@@ -8,16 +8,12 @@ export const fetchPokemons = async (limit = 20, offset = 0) => {
       pokemon.id = getIdFromUrl(pokemon.url);
     });
 
-    // Consultar solo hasta el Pokemon 493 ya que posterior a este índice no existen imgs.
-    // comentar este bloque en caso de querer mostrar todos los resultados.
-    const newResults = list.results.filter(pokemon => pokemon.id <= 493);
-    list = { ...list, count: 493, results: newResults };
-
-    return list;
+    return list.results;
   } catch (error) {
     return console.log(error);
   }
 };
+
 export const fetchPokemonById = async id => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);

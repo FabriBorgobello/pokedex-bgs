@@ -6,7 +6,7 @@ import { Poke } from "../../context/Poke";
 
 const PokemonDetail = () => {
   const { id } = useParams();
-  const [poke, setPoke] = React.useContext(Poke);
+  const [, setPoke] = React.useContext(Poke);
 
   React.useEffect(() => {
     fetchPokemonById(id).then(result => setPoke(result));

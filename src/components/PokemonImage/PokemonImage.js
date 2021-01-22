@@ -46,6 +46,9 @@ const fixNames = name => {
   if (name === "mime-jr") {
     return "mimejr";
   }
+  if (name === "mr-mime") {
+    return "mrmime";
+  }
   if (name === "lickilicky") {
     return "lickilicki";
   }

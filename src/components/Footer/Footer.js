@@ -10,13 +10,14 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
           className={styles.SocialLink}
+          aria-label='linkedin'
         >
           <i className="fab fa-linkedin fa-lg" />
         </a>
-        <a href="https://github.com/fabriborgobello" target="_blank" rel="noreferrer" className={styles.SocialLink}>
+        <a href="https://github.com/fabriborgobello" target="_blank" rel="noreferrer" className={styles.SocialLink} aria-label='github'>
           <i className="fab fa-github-square fa-lg" />
         </a>
-        <a href="mailto:fborgobello@gmail.com" target="_blank" rel="noreferrer" className={styles.SocialLink}>
+        <a href="mailto:fborgobello@gmail.com" target="_blank" rel="noreferrer" className={styles.SocialLink} aria-label='email'>
           <i className="fas fa-envelope-square fa-lg" />
         </a>
       </div>

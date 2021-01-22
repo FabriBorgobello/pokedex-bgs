@@ -1,4 +1,3 @@
-import { getPokemonImg } from "../../api/pokemonAPI";
 import PokemonImage from "../PokemonImage/PokemonImage";
 import styles from "./PokemonCard.module.scss";
 const PokemonCard = ({ name, id }) => {
@@ -10,7 +9,6 @@ const PokemonCard = ({ name, id }) => {
       <div className={styles.Content}>
         <span className={styles.Id}>#{id}</span>
         <PokemonImage id={id} name={name} />
-        {/* <img className={styles.PokemonImage} src={getPokemonImg(id)} alt={name} /> */}
       </div>
     </div>
   );

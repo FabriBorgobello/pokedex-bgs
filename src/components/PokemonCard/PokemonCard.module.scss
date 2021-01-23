@@ -1,3 +1,6 @@
+@import "../../styles//variables.scss";
+
+
 .PokemonCard {
   width: 250px;
   height: 160px;
@@ -29,7 +32,7 @@
     display: flex;
     justify-content: flex-start;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
-    background-color: rgb(160, 10, 10);
+    background-color: $color-primary;
     color: white;
     font-size: 0.8rem;
     text-transform: capitalize;

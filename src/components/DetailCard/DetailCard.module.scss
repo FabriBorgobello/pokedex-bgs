@@ -1,2 +1,197 @@
+.SpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Container {
+  // * {
+  //   border: 1px solid red;
+  // }
+  display: grid;
+  height: 100%;
+  min-height: 100%;
+  padding: 3% 12%;
+  grid-template-columns: 1fr 0.8fr 1.1fr 1.1fr;
+  grid-template-rows: auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Navigation Navigation Navigation Navigation"
+    "Image Image Name Name"
+    "Image Image Type Abilities"
+    "Image Image Height Weight"
+    "Bottom Bottom Bottom Bottom";
+
+  .Navigation {
+    grid-area: Navigation;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 2rem 0;
+
+    i {
+      margin: 0 0.5rem 0 0.3rem;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      background-color: red;
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      background-color: hsl(0, 0%, 90%);
+
+      &:hover {
+        background-color: hsl(0, 0%, 85%);
+      }
+    }
+  }
+  .Image {
+    grid-area: Image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Name {
+    grid-area: Name;
+    display: flex;
+    align-items: center;
+    .Pokemon {
+      text-transform: capitalize;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .Id {
+      margin-left: 1rem;
+      background-color: #c4c4c4;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.25rem;
+    }
+  }
+  .Height {
+    grid-area: Height;
+    @extend .Card;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 0, 0, 0.15);
+    font-size: 2rem;
+  }
+  .Type {
+    grid-area: Type;
+    @extend .Card;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    align-items: center;
+
+    div {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .Weight {
+    grid-area: Weight;
+    @extend .Card;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 255, 0.15);
+    font-size: 2rem;
+  }
+  .Abilities {
+    grid-area: Abilities;
+    @extend .Card;
+    display: flex;
+    background: rgba(0, 255, 0, 0.15);
+    flex-direction: column;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+  }
+  .Bottom {
+    grid-area: Bottom;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem 0;
+    a {
+      text-decoration: none;
+      color: inherit;
+      background-color: hsl(0, 0%, 100%);
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: hsl(0, 0%, 95%);
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1fr 1.1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "Navigation Navigation Navigation Navigation"
+      "Name Name Name Name"
+      "Image Image Image Image"
+      "Image Image Image Image"
+      "Type Type Type Type"
+      "Abilities Abilities Abilities Abilities"
+      "Height Height Weight Weight"
+      "Bottom Bottom Bottom Bottom";
+    .Navigation {
+      margin: 1rem 0;
+    }
+    .Image {
+      margin: 1.5rem 0;
+    }
+    .Name {
+      .Pokemon {
+        margin: 1rem 0 0.5rem 0;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    grid-template-areas:
+      "Navigation Navigation Navigation Navigation"
+      "Name Name Name Name"
+      "Image Image Image Image"
+      "Image Image Image Image"
+      "Type Type Type Type"
+      "Height Height Weight Weight"
+      "Abilities Abilities Abilities Abilities"
+      "Bottom Bottom Bottom Bottom";
+
+    .Name {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .Bottom {
+      margin: 1rem 0;
+    }
+  }
+}
+
+.Card {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .Subtitle {
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .CardContent {
+    font-weight: 300;
+  }
+  @media (max-width: 730px) {
+    justify-content: center;
+  }
 }

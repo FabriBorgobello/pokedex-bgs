@@ -1,0 +1,20 @@
+.FabContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: #fff;
+  cursor: pointer;
+
+  .FabIcon {
+    display: flex;
+    align-items: center;
+    color: #292929;
+  }
+}

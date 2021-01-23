@@ -1,0 +1,19 @@
+.Container {
+  display: flex;
+  align-items: center;
+  .SearchIcon {
+    opacity: 0.6;
+    position: relative;
+    right: 23px;
+    bottom: 12px;
+  }
+  .SearchBar {
+    min-width: 250px;
+    height: 30px;
+    padding: 0.8rem 0.5rem;
+    margin: 0.5rem 0 2rem 0;
+    border-radius: 0.25rem;
+    border: 1px solid rgb(128, 128, 128);
+    outline: none;
+  }
+}

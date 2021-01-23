@@ -6,4 +6,9 @@ html,
 body {
   font-family: "Maven Pro", sans-serif;
   min-height: 100%;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(226, 37, 37, 0.02) 0%,
+    rgba(211, 49, 49, 0.02) 82.8%
+  );
 }

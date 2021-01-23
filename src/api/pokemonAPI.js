@@ -30,7 +30,3 @@ export const getIdFromUrl = url => {
   const id = Number(slicedUrl.substring(slicedUrl.lastIndexOf("/") + 1));
   return id;
 };
-
-// export const getPokemonImg = id => {
-//   return `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/${id}.png?raw=true`;
-// };

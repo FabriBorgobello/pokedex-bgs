@@ -3,23 +3,21 @@ import { Search } from "../../context/Search";
 import styles from "./SearchBar.module.scss";
 
 const SearchBar = () => {
-  const [keyWord, setKeyWord] = React.useContext(Search);
+  const [, setKeyWord] = React.useContext(Search);
 
-  const changeHandler = e => {
+  const submitHandler = e => {
     e.preventDefault();
-    setKeyWord(e.target.value);
+    setKeyWord(e.target[0].value.trim());
   };
 
   return (
-    <div className={styles.Container}>
-      <input
-        className={styles.SearchBar}
-        placeholder="Buscar Pokémon"
-        onChange={e => changeHandler(e)}
-        value={keyWord}
-      />
-      <i className={`fas fa-search ${styles.SearchIcon}`}></i>
-    </div>
+    <form onSubmit={e => submitHandler(e)} className={styles.Container}>
+      <input aria-label="pokemon-search" className={styles.SearchBar} placeholder="Search Pokemon" />
+      <button type="submit" className={styles.SearchButton}>
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        Search
+      </button>
+    </form>
   );
 };
 

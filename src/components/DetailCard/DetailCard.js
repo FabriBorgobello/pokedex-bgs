@@ -23,30 +23,30 @@ const DetailCard = () => {
           <div>
             {poke.id > 1 && (
               <Link className={styles.Element} to={`/pokemon/${poke.id - 1}`}>
-                <i class="fas fa-arrow-left" />#{poke.id - 1}
+                <i className="fas fa-arrow-left" />#{poke.id - 1}
               </Link>
             )}
           </div>
           <div>
             {poke.id < 493 && (
               <Link className={styles.Element} to={`/pokemon/${poke.id + 1}`}>
-                #{poke.id + 1} <i class="fas fa-arrow-right" />
+                #{poke.id + 1} <i className="fas fa-arrow-right" />
               </Link>
             )}
           </div>
         </div>
-        <div className={styles.Image}>
+        <div className={styles.Image} data-aos="fade-right" data-aos-once="true">
           <PokemonImage id={poke.id} name={poke.name} size={380} />
         </div>
-        <div className={styles.Name}>
+        <div className={styles.Name} data-aos="zoom-in" data-aos-once="true">
           <span className={styles.Pokemon}>{poke.name}</span>
           <span className={styles.Id}>#{poke.id}</span>
         </div>
-        <div className={styles.Height}>
+        <div className={styles.Height} data-aos="zoom-in" data-aos-once="true">
           <span className={styles.Subtitle}>Height</span>
           <span className={styles.CardContent}> {poke.height / 10}m</span>
         </div>
-        <div className={styles.Type}>
+        <div className={styles.Type} data-aos="zoom-in" data-aos-once="true">
           <span className={styles.Subtitle}>Type</span>
           <div>
             {poke.types.map(type => {
@@ -54,11 +54,11 @@ const DetailCard = () => {
             })}
           </div>
         </div>
-        <div className={styles.Weight}>
+        <div className={styles.Weight} data-aos="zoom-in" data-aos-once="true">
           <span className={styles.Subtitle}>Weight</span>
           <span className={styles.CardContent}>{poke.weight / 10}kg</span>
         </div>
-        <div className={styles.Abilities}>
+        <div className={styles.Abilities} data-aos="zoom-in" data-aos-once="true">
           <span className={styles.Subtitle}>Abilities</span>
           {poke.abilities.map(ability => {
             return (
@@ -70,7 +70,7 @@ const DetailCard = () => {
         </div>
         <div className={styles.Bottom}>
           <Link to="/">
-            <i class="fas fa-arrow-left"></i> <span> Back to Home </span>
+            <i className="fas fa-arrow-left"></i> <span> Back to Home </span>
           </Link>
         </div>
       </div>

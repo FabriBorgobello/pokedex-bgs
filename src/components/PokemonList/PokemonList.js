@@ -16,7 +16,8 @@ const PokemonList = () => {
 
   React.useEffect(() => {
     setLoading(true);
-    setPoke([]);
+    setPoke({});
+    setPokeList([]);
     fetchAllPokemons()
       .then(result => setPokeList(result))
       .then(() => {
@@ -34,11 +35,17 @@ const PokemonList = () => {
   }
   return (
     <>
-      <div className={styles.Container}>
-        {pokeList &&
+      <div className={styles.Container} test-id="list-container">
+        {!loading && pokeList.length === 0 && <span>No results found :(</span>}
+        {pokeList.length > 0 &&
           pokeList.map(pokemon => {
             return (
-              <Link key={pokemon.id} to={`pokemon/${pokemon.id}`} className={styles.Link}>
+              <Link
+                key={pokemon.id}
+                to={`pokemon/${pokemon.id}`}
+                className={styles.Link}
+                test-id={`card-${pokemon.id}`}
+              >
                 <PokemonCard name={pokemon.name} id={pokemon.id} />
               </Link>
             );

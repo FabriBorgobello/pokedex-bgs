@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as PokeBall } from "../../images/pokebola.svg";
 import styles from "./NavBar.module.scss";
 
 const NavBar = () => {
+  const location = useLocation();
+
+  function refreshPage() {
+    if (location.pathname === "/pokedex") {
+      window.location.reload();
+    }
+  }
   return (
     <nav className={styles.NavBar}>
-      <Link to="/" style={{ textDecoration: "none" }} className={styles.Brand}>
+      <Link to="/pokedex" onClick={refreshPage} style={{ textDecoration: "none" }} className={styles.Brand}>
         <PokeBall className={styles.Logo} />
         <span className={styles.Title}>Pokedex</span>
       </Link>

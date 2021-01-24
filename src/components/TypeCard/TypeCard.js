@@ -4,7 +4,6 @@ const TypeCard = ({ type }) => {
     borderRadius: "0.25rem",
     margin: "0.5rem",
     padding: "0.3rem 1rem",
-    width: "40%",
   });
 
   const selectColor = type => {

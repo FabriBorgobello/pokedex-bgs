@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { fetchPokemonById } from "../../api/pokemonAPI";
 import DetailCard from "../../components/DetailCard/DetailCard";
 import { Poke } from "../../context/Poke";
@@ -13,6 +13,11 @@ const PokemonDetail = () => {
     setPoke([]);
     fetchPokemonById(id).then(result => setPoke(result));
   }, [id, setPoke]);
+
+  // Ir a Page404 si la ID introducida como parámetro no corresponde a un Pokemon disponible.
+  if (!(Number(id) <= 493 && Number(id) >= 1)) {
+    return <Redirect to="/Page404" />;
+  }
 
   return (
     <div className={styles.Container}>

@@ -4,3 +4,6 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom/extend-expect";
 import "jest-axe/extend-expect";
+import { configure } from "@testing-library/dom";
+
+configure({ testIdAttribute: "test-id" });

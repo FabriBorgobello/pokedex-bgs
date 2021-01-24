@@ -30,7 +30,7 @@ const PokemonList = () => {
       });
   }, [setPokeList, keyWord, setLoading, setPoke]);
 
-  if (!loading) {
+  if (loading) {
     return <Spinner />;
   }
 

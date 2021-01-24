@@ -67,7 +67,7 @@ const padNumber = (num, size = 3) => {
 };
 
 const PokemonImage = ({ id, name, size = 140 }) => (
-  <img src={`./pokemons/${padNumber(id, 3)}-${fixNames(name)}.svg`} style={{ height: size, width: size }} alt={name} />
+  <img src={`pokemons/${padNumber(id, 3)}-${fixNames(name)}.svg`} style={{ height: size, width: size }} alt={name} />
 );
 
 export default PokemonImage;

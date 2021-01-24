@@ -20,9 +20,9 @@ function App() {
             <div className="Content" style={{ minHeight: "calc(100vh - 70px)", paddingTop: "50px" }}>
               <Switch>
                 <Route exact path="/">
-                  <Redirect to="/pokedex" />
+                  <Redirect to="/pokedex-bgs" />
                 </Route>
-                <Route exact path="/pokedex" component={Home} />
+                <Route exact path="/pokedex-bgs" component={Home} />
                 <Route exact path="/pokemon/:id" component={PokemonDetail} />
                 <Route component={Page404} />
               </Switch>

@@ -12,7 +12,7 @@ const NavBar = () => {
   }
   return (
     <nav className={styles.NavBar}>
-      <Link to="/pokedex" onClick={refreshPage} style={{ textDecoration: "none" }} className={styles.Brand}>
+      <Link to="/" onClick={refreshPage} style={{ textDecoration: "none" }} className={styles.Brand}>
         <PokeBall className={styles.Logo} />
         <span className={styles.Title}>Pokedex</span>
       </Link>

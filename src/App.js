@@ -1,6 +1,6 @@
 import "./styles/App.scss";
 import * as React from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { PokeListProvider } from "./context/PokeList";
 import { PokeProvider } from "./context/Poke";
 import Home from "./pages/Home/Home";
@@ -12,6 +12,7 @@ import Page404 from "./pages/Page404/Page404";
 
 function App() {
   return (
+    // <HashRouter basename="/">
     <BrowserRouter>
       <PokeListProvider>
         <PokeProvider>
@@ -19,10 +20,7 @@ function App() {
             <NavBar />
             <div className="Content" style={{ minHeight: "calc(100vh - 70px)", paddingTop: "50px" }}>
               <Switch>
-                <Route exact path="/">
-                  <Redirect to="/pokedex-bgs" />
-                </Route>
-                <Route exact path="/pokedex-bgs" component={Home} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/pokemon/:id" component={PokemonDetail} />
                 <Route component={Page404} />
               </Switch>
@@ -32,6 +30,7 @@ function App() {
         </PokeProvider>
       </PokeListProvider>
     </BrowserRouter>
+    // </HashRouter>
   );
 }
 

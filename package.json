@@ -1,7 +1,6 @@
 {
   "name": "pokedex-bgs",
   "version": "0.1.0",
-  "homepage": "http://fabriborgobello.github.io/pokedex-bgs",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

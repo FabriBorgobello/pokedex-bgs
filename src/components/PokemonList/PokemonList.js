@@ -47,7 +47,7 @@ const PokemonList = () => {
             return (
               <Link
                 key={pokemon.id}
-                to={`pokemon/${pokemon.id}`}
+                to={`/pokemon/${pokemon.id}`}
                 className={styles.Link}
                 test-id={`card-${pokemon.id}`}
               >

@@ -69,7 +69,7 @@ const DetailCard = () => {
           })}
         </div>
         <div className={styles.Bottom}>
-          <Link to="/">
+          <Link to="/" className={styles.Link}>
             <i className="fas fa-arrow-left"></i> <span> Back to Home </span>
           </Link>
         </div>

@@ -1,0 +1,30 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px);
+  .Header {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+  .Text {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .Link {
+    text-decoration: none;
+    color: inherit;
+    background-color: hsl(0, 0%, 90%);
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border: 1px solid hsla(0, 0%, 0%, 0.2);
+    &:hover {
+      background-color: hsl(0, 0%, 85%);
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+}

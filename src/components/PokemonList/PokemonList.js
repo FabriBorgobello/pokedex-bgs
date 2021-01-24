@@ -26,17 +26,22 @@ const PokemonList = () => {
             prevState.filter(pokemon => pokemon.name.toLowerCase().includes(keyWord.toLowerCase()))
           );
         }
-        setLoading(false);
+        setTimeout(() => setLoading(false), 1000);
       });
   }, [setPokeList, keyWord, setLoading, setPoke]);
 
   if (loading) {
     return <Spinner />;
   }
+
+  const NoResults = () => {
+   return <span className={styles.NoResults}>No results found :(</span>;
+  };
+
   return (
     <>
       <div className={styles.Container} test-id="list-container">
-        {!loading && pokeList.length === 0 && <span>No results found :(</span>}
+        {!loading && pokeList.length === 0 && <NoResults />}
         {pokeList.length > 0 &&
           pokeList.map(pokemon => {
             return (

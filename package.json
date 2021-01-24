@@ -1,5 +1,6 @@
 {
   "name": "pokedex-bgs",
+  "homepage": "https://fabriborgobello.github.io/pokedex-bgs/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
